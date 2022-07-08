@@ -1,0 +1,14 @@
+<h2>FirstComponent</h2>
+<header>
+    <h2>{{name}}</h2>
+    <p>{{description}}</p>
+</header>
+<div>
+    <ul>
+        <li *ngFor="let course of courses; let i = index;">
+            <div>{{course.category}}</div>
+            <div>Price: {{course.price | currency}}</div>
+            <div>Available: {{course.isAvailable ? 'Yes' : 'No'}}</div>
+        </li>
+    </ul>
+</div>

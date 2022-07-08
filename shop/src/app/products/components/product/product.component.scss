@@ -1,0 +1,26 @@
+#id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+    
+    .name,
+    .description {
+        width: 150px;
+    }
+
+    .price {
+        width: 70px;
+    }
+
+    .btn {
+        width: 100px;
+        cursor: pointer;
+    }
+
+}
+
+div {
+    width: 135px;
+}
