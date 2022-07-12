@@ -5,6 +5,8 @@
     <div class="price">Price</div>
     <div class="action">Action</div>
 </div>
+<!-- не стоит организовывать столько инпутов, чтобы передать объект по свойствам,
+в целях демо можно попробовать, но лучше реализовать один инпут и передать объект -->
 <app-product *ngFor="let product of products; let i = index; trackBy: getProductId"
     [id]="product.id"
     [number]="i"

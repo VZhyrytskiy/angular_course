@@ -21,6 +21,9 @@ export class CartListComponent implements OnInit {
     return item.id;
   }
 
+  // думаю, что такая функциональность компоненту не нужна
+  // ее можно переместить в сервис и просто из сервиса вызвать этот метод
+  // а в сервисе не сразу возвращать литерал массива, а объявить его и к нему примениить reduce
   getSum() {
     return this.products?.reduce((acc: number, product: Product) => acc + product.price, 0);
   }
