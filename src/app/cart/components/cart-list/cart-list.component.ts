@@ -7,24 +7,34 @@ import { CartService } from '../../services/cart.service';
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.scss']
 })
-export class CartListComponent implements OnInit {
+export class CartListComponent {
 
   products!: Product[];
-  
-  constructor(private readonly cartService: CartService) { }
 
-  ngOnInit(): void {
-    this.products = this.cartService.getProducts()
-  }
+  constructor(public readonly cartService: CartService) { }
 
   getProductId(index: number, item: Product): string {
     return item.id;
   }
 
-  // думаю, что такая функциональность компоненту не нужна
-  // ее можно переместить в сервис и просто из сервиса вызвать этот метод
-  // а в сервисе не сразу возвращать литерал массива, а объявить его и к нему примениить reduce
   getSum() {
-    return this.products?.reduce((acc: number, product: Product) => acc + product.price, 0);
+    return this.cartService.totalCost();
   }
+
+  getQuantity() {
+    return this.cartService.totalQuantity();
+  }
+
+  onIncrease(product: Product): void {
+    this.cartService.addProduct(product);
+  }
+
+  onDecrease(productId: string): void {
+    this.cartService.reduceProduct(productId);
+  }
+
+  onDelete(productId: string): void {
+    this.cartService.removeProduct(productId);
+  }
+
 }

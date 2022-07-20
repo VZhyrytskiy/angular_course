@@ -1,6 +1,28 @@
-<div id="id">
-    <div class="name">{{number}}. {{name}}</div>
-    <div class="description">{{description}}</div>
-    <div class="price">{{price | currency}}</div>
-    <div *ngIf="action" class="action"><button  class="btn" (click)="onAddToCart(id)">Buy</button></div>
+<div class="container">
+    <ng-container *ngIf="products.length else noproducts">
+        <div class="header">
+            <div class="name">Name</div>
+            <div class="description">Description</div>
+            <div class="category">Category</div>
+            <div class="price">Price</div>
+            <div *ngIf="haveAction" class="action">Action</div>
+        </div>
+        <div id={{product.id}} class="row" *ngFor="let product of products; let i = index; trackBy: getProductId">
+            <div class="name">{{i+1}}. {{product.name}}</div>
+            <div class="description">{{product.description}}</div>
+            <div class="category">{{product.category}}</div>
+            <div class="price">{{product.price | currency}}</div>
+            <div *ngIf="haveAction" class="action">
+                <button [disabled]="!product.isAvailable" class="btn" (click)="onAddToCart(product)">
+                    {{ product.isAvailable ? 'Buy' : 'Unavailable'}}
+                </button>
+            </div>
+        </div>
+        <div *ngIf="total" class="footer">
+            <p>Total: {{qty ? qty + ' item(s), ': ''}} {{total | currency}}</p>
+        </div>
+    </ng-container>
+    <ng-template #noproducts>
+        <h3>Cart is Empty</h3>
+    </ng-template>
 </div>

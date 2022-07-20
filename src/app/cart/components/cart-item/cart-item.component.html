@@ -1,0 +1,10 @@
+<div class="name">{{number}}. {{product.name}}</div>
+<div class="price">{{product.price | currency}}</div>
+<div class="quantity">
+    <button (click)="onQuantityDecrease()">-</button>
+        {{product.qty}}
+    <button (click)="onQuantityIncrease()">+</button>
+</div> 
+<div class="action">
+    <button (click)="onDeleteItem()">Delete</button>
+</div> 

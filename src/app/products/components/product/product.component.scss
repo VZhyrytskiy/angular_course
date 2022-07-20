@@ -1,26 +1,49 @@
-#id {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    width: 100%;
-    
-    .name,
-    .description {
-        width: 150px;
-    }
-
-    .price {
-        width: 70px;
-    }
-
-    .btn {
-        width: 100px;
-        cursor: pointer;
-    }
-
+.container {
+    min-width: 520px;
 }
 
-div {
-    width: 135px;
+.header {
+    display: flex;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.name {
+    width: 150px;
+}
+
+.description {
+    width: 150px;
+}
+
+.category {
+    width: 120px;
+}
+
+.price {
+    width: 90px;
+}
+
+.btn {
+    width: 100px;
+    cursor: pointer;
+}
+
+.footer {
+    width: 100%;
+    border-top: 1px solid #000;
+    text-align: right;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+h3 {
+    text-align: center;
+    color: rgb(143, 21, 21)
 }

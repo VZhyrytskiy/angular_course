@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    width: 180px;
+}
+
+.price {
+    width: 70px;
+}
+
+.quantity {
+    width: 140px;
+    text-align: center;
+
+    button {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.action {
+    width: 80px;
+
+    button {
+        height: 24px;
+        cursor: pointer;
+    }
+}

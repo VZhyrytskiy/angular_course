@@ -1,20 +1,6 @@
-<h2>ProductListComponent</h2>
-<div class="header">
-    <div class="name">Name</div>
-    <div class="description">Description</div>
-    <div class="price">Price</div>
-    <div class="action">Action</div>
-</div>
-<!-- не стоит организовывать столько инпутов, чтобы передать объект по свойствам,
-в целях демо можно попробовать, но лучше реализовать один инпут и передать объект -->
-<app-product *ngFor="let product of products; let i = index; trackBy: getProductId"
-    [id]="product.id"
-    [number]="i"
-    [name]="product.name"
-    [description]="product.description"
-    [price]="product.price"
-    [action]="true"
+<h2>Product List</h2>
+<app-product
+    [products] = products
+    (productClick) = onProductClick($event)
+    [haveAction]=true
 ></app-product>
-
-
-

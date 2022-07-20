@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    height: calc(100vh - 100px);
+}
+
+.product-list,
+.cart {
+    height: fit-content;
+    border: 1px solid #cbcbcb;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 0px #cdcdcd;
+    padding: 24px;
+}
+
+.product-list {
+    background-color: #f9f3d3;
+    min-width: 550px;
+}
+
+.cart {
+    background-color: #d3e8f9;
+    min-width: 450px;
+}
