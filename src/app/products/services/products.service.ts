@@ -6,10 +6,7 @@ import { Category, Product } from '../models/product';
 })
 export class ProductsService {
 
-  private products: Product[];
-
-  constructor() {
-    this.products = [
+  private products: Product[] = [
       {
         id: 'dsafas-121-0',
         name: 'Item Name A',
@@ -75,7 +72,6 @@ export class ProductsService {
         category: Category.Expert
       },
     ];
-  }
 
   getProducts(): Product[] {
     return this.products;

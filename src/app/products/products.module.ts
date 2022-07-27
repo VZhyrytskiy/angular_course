@@ -10,6 +10,6 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     SharedModule
   ],
-  exports: [ProductComponent, ProductListComponent],
+  exports: [ProductListComponent],
 })
 export class ProductsModule { }

@@ -11,6 +11,10 @@ export class CartListComponent {
 
   products!: Product[];
 
+
+  // немного не понятно:
+  // для разных методов сервиса, созданы методы обертки, но для метода
+  // getProducts() обертки нет и для этого надо сервис внедрять как публичный и использовать в темплейте
   constructor(public readonly cartService: CartService) { }
 
   getProductId(index: number, item: Product): string {
