@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Product } from 'src/app/products/models/product';
 import { CartService } from '../../services/cart.service';
 
@@ -18,11 +18,11 @@ export class CartListComponent {
   }
 
   getSum() {
-    return this.cartService.totalCost();
+    return this.cartService.totalCost;
   }
 
   getQuantity() {
-    return this.cartService.totalQuantity();
+    return this.cartService.totalQuantity;
   }
 
   onIncrease(product: Product): void {
@@ -30,7 +30,7 @@ export class CartListComponent {
   }
 
   onDecrease(productId: string): void {
-    this.cartService.reduceProduct(productId);
+    this.cartService.decreaseQuantity(productId);
   }
 
   onDelete(productId: string): void {
