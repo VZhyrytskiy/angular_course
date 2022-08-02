@@ -27,11 +27,11 @@ import { SharedModule } from './shared/shared.module';
   ],
   providers: [
     {
-      provide: ConstantLiteralToken, useValue: constLit 
+      provide: ConstantLiteralToken, useValue: constLit
       // HOW TO USE: @Inject(ConstantLiteralToken) private cl: ConstantLiteral
     },
     {
-      provide: GeneratorToken, useFactory: GeneratorFactory(32), deps: [GeneratorService] 
+      provide: GeneratorToken, useFactory: GeneratorFactory(32), deps: [GeneratorService]
       // HOW TO USE: @Inject(GeneratorToken) private rnd: string
     },
     {
@@ -42,3 +42,4 @@ import { SharedModule } from './shared/shared.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// Все хорошо
