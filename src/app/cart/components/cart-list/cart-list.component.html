@@ -1,20 +1,37 @@
 <h2>Cart</h2>
 <div class="container">
 
-    <ng-container *ngIf="cartService.getProducts().length else noproducts">
+    <ng-container *ngIf="allProducts.length else no_products">
+        <div class="sort">
+            <select name="sortField" (change)="onSortFieldChange($event)">
+                <option disabled selected value> - select a field - </option>
+                <option *ngFor="let item of sortSelectOptions" [value]="item.type">
+                    {{item.option}}
+                </option>
+            </select>
+            <input type="radio" name="sortDirection" id="sortDirectionAsc" value="true"
+                (change)="onSortDirectionChange($event)">
+            <label for="sortDirectionAsc">Asc.</label>
+            <input type="radio" name="sortDirection" id="sortDirectionDesc" value="false" checked
+                (change)="onSortDirectionChange($event)">
+            <label for="sortDirectionDesc">Desc.</label>
+        </div>
+        <hr>
         <div class="header">
             <div class="name">Name</div>
             <div class="price">Price</div>
             <div class="quantity">Quantity</div>
         </div>
 
-        <div id={{product.id}} class="row" *ngFor="let product of cartService.getProducts(); let i = index; trackBy: getProductId">
+        <div 
+            id={{product.id}} class="row" *ngFor="let product of allProducts | orderBy : sortOptions.field : sortOptions.direction; let i = index; trackBy: getProductId">
+            
             <app-cart-item appHighlight
-                [product]=product
-                [number]=i+1
-                (increase)=onIncrease($event)
-                (decrease)=onDecrease($event)
-                (delete)=onDelete($event)
+                [product]="product"
+                [number]="i+1"
+                (increase)="onIncrease($event)"
+                (decrease)="onDecrease($event)"
+                (delete)="onDelete($event)"
                 class="cart-item"
             ></app-cart-item>
         </div>
@@ -24,7 +41,7 @@
         </div>
     </ng-container>
 
-    <ng-template #noproducts>
+    <ng-template #no_products>
         <h3>Cart is Empty</h3>
     </ng-template>
 

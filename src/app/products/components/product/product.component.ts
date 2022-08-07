@@ -8,7 +8,7 @@ import { Product } from '../../models/product';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductComponent {
-  @Input() products: Product[] = [];
+  @Input() products!: Product[] | null;
   @Input() total!: number;
   @Input() haveAction = false;
   @Input() qty = 0;

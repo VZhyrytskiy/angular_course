@@ -1,7 +1,7 @@
 <h2>Product List</h2>
 <!-- валидный HTML требует значения атрибутов в кавычках -->
 <app-product
-    [products] = "products"
+    [products] = "products | async"
     (productClick) = "onProductClick($event)"
     [haveAction]="true"
 ></app-product>

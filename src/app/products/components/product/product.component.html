@@ -1,5 +1,5 @@
 <div class="container">
-    <ng-container *ngIf="products.length else noproducts">
+    <ng-container *ngIf="products?.length else noproducts">
         <div class="header">
             <div appFontChange="5" class="name">Name</div>
             <div appFontChange="-5" class="description">Description</div>
@@ -10,7 +10,7 @@
         <div id={{product.id}} class="row" *ngFor="let product of products; let i = index; trackBy: getProductId">
             <div class="name">{{i+1}}. {{product.name}}</div>
             <div class="description">{{product.description}}</div>
-            <div class="category">{{product.category}}</div>
+            <div class="category">{{product.category | uppercase}}</div>
             <div class="price">{{product.price | currency}}</div>
             <div *ngIf="haveAction" class="action">
                 <button [disabled]="!product.isAvailable" class="btn" (click)="onAddToCart(product)">
