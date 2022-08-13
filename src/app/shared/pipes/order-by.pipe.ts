@@ -11,6 +11,7 @@ export class OrderByPipe implements PipeTransform {
 
     isAsc = isAsc.toString() === 'true';
     return value.sort((a: T, b: T) => {
+      // тут сложность может быть в том, что не для всех типов значения можно применять сравнение
       if (a[key] > b[key]) return isAsc ? 1 : -1;
       if (a[key] < b[key]) return isAsc ? -1 : 1;
       return 0;
