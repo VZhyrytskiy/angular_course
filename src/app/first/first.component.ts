@@ -10,6 +10,12 @@ enum Level {
   Expert = 'Expert'
 }
 
+export const categoriesOptions = () => [
+  { type: Level.Beginner, option: Level.Beginner },
+  { type: Level.Intermediate, option: Level.Intermediate },
+  { type: Level.Expert, option: Level.Expert },
+];
+
 interface Course {
   category: Level;
   price: number;

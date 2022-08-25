@@ -21,8 +21,12 @@ export class ProductListComponent implements OnInit {
     this.products = this.productsService.getProducts();
   }
 
-  onProductClick(product: Product): void {
+  onAddToCart(product: Product) {
     this.cartService.addProduct(product);
+  }
+
+  getProductId(index: number, item: Product): string {
+    return item.id;
   }
 
 }

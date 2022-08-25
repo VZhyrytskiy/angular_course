@@ -1,0 +1,11 @@
+<div class="container">
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="userRole">
+        <mat-radio-button
+            *ngFor="let role of roles" 
+            [value]="role.type">{{role.option}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <button mat-flat-button color="primary" class="btn-login" aria-label="login" (click)="onLogin()">
+        Login
+    </button>
+</div>

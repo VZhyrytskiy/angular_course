@@ -1,7 +1,8 @@
 <h2>Cart</h2>
 <div class="container">
-
-    <ng-container *ngIf="allProducts.length else no_products">
+    <!-- <ng-container *ngIf="allProducts.length else no_products"> -->
+    <!-- Для проверки работы guard -->
+    <ng-container>
         <div class="sort">
             <select name="sortField" (change)="onSortFieldChange($event)">
                 <option disabled selected value> - select a field - </option>
@@ -22,9 +23,9 @@
             <div class="price">Price</div>
             <div class="quantity">Quantity</div>
         </div>
-
         <div 
-            id={{product.id}} class="row" *ngFor="let product of allProducts | orderBy : sortOptions.field : sortOptions.direction; let i = index; trackBy: getProductId">
+            id={{product.id}} class="row" 
+            *ngFor="let product of allProducts | orderBy : sortOptions.field : sortOptions.direction; let i = index; trackBy: getProductId">
             
             <app-cart-item appHighlight
                 [product]="product"
@@ -35,14 +36,17 @@
                 class="cart-item"
             ></app-cart-item>
         </div>
-
         <div *ngIf="getSum()" class="footer">
             <p>Total: {{getQuantity() ? getQuantity() + ' item(s), ': ''}} {{getSum() | currency}}</p>
+        </div>
+        <div class="action">
+            <button mat-flat-button color="primary" class="checkout" aria-label="checkout" routerLink="/order">
+                Checkout
+            </button>
         </div>
     </ng-container>
 
     <ng-template #no_products>
-        <h3>Cart is Empty</h3>
+        <mat-card><h3>Cart is Empty</h3></mat-card>
     </ng-template>
-
 </div>

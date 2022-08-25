@@ -1,3 +1,12 @@
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #2038c1;
+}
+
 h2,
 h3 {
     text-align: center;
@@ -34,12 +43,11 @@ h3 {
     margin: 0 auto;
 }
 
-h3 {
-    text-align: center;
-    color: rgb(143, 21, 21)
-}
-
 .cart-item {
     padding: 10px;
     border-radius: 5px;
+}
+
+.action {
+    text-align: right;
 }

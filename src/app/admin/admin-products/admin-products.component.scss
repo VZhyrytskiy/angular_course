@@ -1,0 +1,38 @@
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    td {
+        border: 1px solid #8a8a8a;
+        vertical-align: top;
+    }
+}
+
+.product {
+    &__description {
+        max-width: 300px;
+    }
+
+    &__image,
+    &__image-tmb {
+        text-align: center;
+
+        img {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+        }
+    }
+
+    &__action {
+        vertical-align: middle !important;
+
+        button {
+            width: 100%;
+        }
+    }
+}

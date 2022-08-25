@@ -11,19 +11,31 @@ import { FirstComponent } from './first/first.component';
 import { OrdersModule } from './orders/orders.module';
 import { ProductsModule } from './products/products.module';
 import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContainerComponent } from './container/container.component';
+import { MainContentComponent } from './container/main-content/main-content.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirstComponent
+    FirstComponent,
+    ContainerComponent,
+    MainContentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     SharedModule,
     ProductsModule,
     OrdersModule,
-    CartModule
+    CartModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+  ],
+  exports: [
+    ContainerComponent,
+    MainContentComponent,
   ],
   providers: [
     {

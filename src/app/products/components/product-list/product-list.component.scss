@@ -1,24 +1,11 @@
-h2 {
-    text-align: center;
-}
-
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0;
-    width: 100%;
-
-    .name,
-    .description {
-        width: 150px;
-    }
+.grid-tile-footer {
+    justify-content: space-between;
 
     .price {
-        width: 70px;
+        font-size: 24px;
     }
+}
 
-    .action {
-        width: 135px;
-    }
+h2 {
+    text-align: center;
 }

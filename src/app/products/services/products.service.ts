@@ -9,73 +9,117 @@ export class ProductsService {
 
   private products: Product[] = [
     {
-      id: 'dsafas-121-0',
+      id: '1',
       name: 'Item Name A',
-      description: 'item description',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!',
       price: 121,
       isAvailable: true,
-      category: Category.Beginner
+      category: Category.Beginner,
+      image: 'https://source.unsplash.com/random/800?sig=1',
+      imageTmb: 'https://source.unsplash.com/random/300x400?sig=1',
     },
     {
-      id: 'dsafas-2121-0a',
+      id: '2',
       name: 'Item Name B',
-      description: 'item description',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!',
       price: 21,
       isAvailable: true,
-      category: Category.Expert
+      category: Category.Expert,
+      image: 'https://source.unsplash.com/random/800?sig=2',
+      imageTmb: 'https://source.unsplash.com/random/300x400?sig=2',
     },
     {
-      id: 'dsafas-321-0d',
+      id: '3',
       name: 'Item Name C',
-      description: 'item description',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!',
       price: 19.95,
       isAvailable: false,
-      category: Category.Intermediate
+      category: Category.Intermediate,
+      image: 'https://source.unsplash.com/random/800?sig=3',
+      imageTmb: 'https://source.unsplash.com/random/300x400?sig=3',
     },
     {
-      id: 'dsafas-421-0x',
+      id: '4',
       name: 'Item Name D',
-      description: 'item description',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!',
       price: 499.95,
       isAvailable: true,
-      category: Category.Beginner
+      category: Category.Beginner,
+      image: 'https://source.unsplash.com/random/800?sig=4',
+      imageTmb: 'https://source.unsplash.com/random/300x400?sig=4',
     },
     {
-      id: 'dsafas-521-0f',
+      id: '5',
       name: 'Item Name E',
-      description: 'item description',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!',
       price: 37.15,
       isAvailable: false,
-      category: Category.Beginner
+      category: Category.Beginner,
+      image: 'https://source.unsplash.com/random/800?sig=5',
+      imageTmb: 'https://source.unsplash.com/random/300x400?sig=5',
     },
     {
-      id: 'ACdsafas-321-0d',
+      id: '6',
       name: 'Item Name AAAC',
-      description: 'item description',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!',
       price: 19.95,
       isAvailable: true,
-      category: Category.Intermediate
+      category: Category.Intermediate,
+      image: 'https://source.unsplash.com/random/800?sig=6',
+      imageTmb: 'https://source.unsplash.com/random/300x400?sig=6',
     },
     {
-      id: 'ABdsafas-421-0x',
+      id: '7',
       name: 'Item Name AAAD',
-      description: 'item description',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!',
       price: 499.95,
       isAvailable: true,
-      category: Category.Intermediate
+      category: Category.Intermediate,
+      image: 'https://source.unsplash.com/random/800?sig=7',
+      imageTmb: 'https://source.unsplash.com/random/300x400?sig=7',
     },
     {
-      id: 'BFDdsafas-521-0f',
+      id: '8',
       name: 'Item Name AAAE',
-      description: 'item description',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!',
       price: 37.15,
       isAvailable: true,
-      category: Category.Expert
+      category: Category.Expert,
+      image: 'https://source.unsplash.com/random/800?sig=8',
+      imageTmb: 'https://source.unsplash.com/random/300x400?sig=8',
     },
   ];
 
   getProducts(): Observable<Product[]> {
     return of(this.products);
+  }
+
+  getProductById(id: NonNullable<Product['id']> | string): Observable<Product> {
+    return of(this.products.find(product => product.id === id)!);
+  }
+
+  addProduct(product: Product): void {
+    this.products = [...this.products, product];
+  }
+
+  updateProduct(product: Product): void {
+    const i = this.products.findIndex(p => p.id === product.id);
+
+    if (i > -1) {
+      this.products.splice(i, 1, product);
+    }
+  }
+
+  deleteProduct(product: Product): void {
+    const i = this.products.findIndex(p => p.id === product.id);
+
+    if (i > -1) {
+      this.products.splice(i, 1);
+    }
+  }
+
+  getNewID(): number {
+    return +this.products[this.products.length - 1].id + 1;
   }
 
 }

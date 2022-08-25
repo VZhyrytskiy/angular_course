@@ -1,0 +1,39 @@
+<h1>Products List</h1>
+
+<table *ngIf="products?.length">
+    <thead>
+        <tr class="products__header">
+            <th class="product__name">Name</th>
+            <th class="product__description">Description</th>
+            <th class="product__category">Category</th>
+            <th class="product__image">Image URL</th>
+            <th class="product__image-tmb">Image preview URL</th>
+            <th class="product__price">Price</th>
+            <th class="product__available">Is Available</th>
+            <th class="product__available">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="product" *ngFor="let product of products; trackBy: getProductId">
+            <td class="product__name">{{product.name}}</td>
+            <td class="product__description">{{(product.description | slice:0:200) + '...'}}</td>
+            <td class="product__category">{{product.category}}</td>
+            <td class="product__image">
+                <img src="{{product.image}}" alt="">
+            </td>
+            <td class="product__image-tmb">
+                <img src="{{product.imageTmb}}" alt="">
+            </td>
+            <td class="product__price">{{product.price | currency}}</td>
+            <td class="product__available">{{product.isAvailable ? 'Yes' : 'No'}}</td>
+            <td class="product__action">
+                <button mat-flat-button class="product__edit" aria-label="edit" routerLink="/admin/product/edit/{{product.id}}">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="no-result" *ngIf="products?.length === 0">
+    <p>No results found</p>
+</div>

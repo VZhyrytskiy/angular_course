@@ -1,0 +1,28 @@
+<header>
+    <mat-toolbar color="primary" class="app-navbar mat-elevation-z6">
+        <div class="header-container">
+            <div class="left-side">
+                <button mat-flat-button color="primary" class="home" aria-label="Home" routerLink="products-list">
+                    <mat-icon>home</mat-icon>
+                    <h3>Home</h3>
+                </button>
+                <button mat-flat-button color="primary" class="login" aria-label="LogIn" routerLink="login">
+                    <mat-icon>person_filled</mat-icon>
+                    <h3>LogIn</h3>
+                </button>
+                <button *ngIf="isAdmin" mat-flat-button color="primary" class="admin" aria-label="Admin" routerLink="admin">
+                    <mat-icon>admin_panel_settings</mat-icon>
+                    <h3>Admin</h3>
+                </button>
+            </div>
+            <button mat-flat-button color="primary" class="cart" aria-label="Cart" routerLink="cart">
+                <div *ngIf="getQuantity()" class="cart-index"><span>{{ getQuantity() }}</span></div>
+                <mat-icon>shopping_cart</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+</header>
+
+<main class="container">
+    <router-outlet></router-outlet>
+</main>

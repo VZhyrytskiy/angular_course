@@ -12,4 +12,6 @@ export interface Product {
   category: Category;
   isAvailable: boolean;
   qty?: number;
+  image: string;
+  imageTmb: string;
 }

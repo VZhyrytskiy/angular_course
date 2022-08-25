@@ -17,45 +17,43 @@ export class CartListComponent {
     direction: '' as keyof Product,
   };
 
-  // немного не понятно:
-  // для разных методов сервиса, созданы методы обертки, но для метода
-  // getProducts() обертки нет и для этого надо сервис внедрять как публичный и использовать в темплейте
-  // - Сделал. Не знаю почему сначала не сделал так ).
   constructor(public readonly cartService: CartService) { }
 
-  get allProducts() {
+  public get allProducts() {
     return this.cartService.getProducts();
   }
 
-  getProductId(index: number, item: Product): string {
+  public getProductId(index: number, item: Product): string {
     return item.id;
   }
 
-  getSum() {
+  public getSum() {
     return this.cartService.totalCost;
   }
 
-  getQuantity() {
+  public getQuantity() {
     return this.cartService.totalQuantity;
   }
 
-  onIncrease(product: Product): void {
+  public onIncrease(product: Product): void {
     this.cartService.addProduct(product);
   }
 
-  onDecrease(productId: string): void {
+  public onDecrease(productId: string): void {
     this.cartService.decreaseQuantity(productId);
   }
 
-  onDelete(productId: string): void {
+  public onDelete(productId: string): void {
     this.cartService.removeProduct(productId);
   }
 
-  onSortFieldChange(event: Event): void {
+  public onSortFieldChange(event: Event): void {
     this.sortOptions.field = (event.target as HTMLInputElement).value as keyof Product;
   }
 
   onSortDirectionChange(event: Event) {
     this.sortOptions.direction = (event.target as HTMLInputElement).value as keyof Product;
   }
+
+  public onCheckout() { }
 }

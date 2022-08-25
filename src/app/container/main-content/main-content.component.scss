@@ -1,0 +1,48 @@
+.header-container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.app-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cart-index {
+    position: absolute;
+    left: 12px;
+    top: 30px;
+    background: red;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 11px;
+    }
+}
+
+h3 {
+    font-size: 14px;
+    line-height: 14px;
+}

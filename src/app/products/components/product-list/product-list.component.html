@@ -1,7 +1,25 @@
-<h2>Product List</h2>
-<!-- валидный HTML требует значения атрибутов в кавычках -->
-<app-product
-    [products] = "products | async"
-    (productClick) = "onProductClick($event)"
-    [haveAction]="true"
-></app-product>
+<ng-container *ngIf="(products | async)?.length; else noproducts">
+    <mat-grid-list cols="4" rowHeight="35:40" gutterSize="10">
+        <mat-grid-tile *ngFor="let product of (products | async); let i = index; trackBy: getProductId">
+            <mat-grid-tile-header>
+                <h3>{{product.name}}</h3>
+            </mat-grid-tile-header>
+            <a routerLink="/product/{{product.id}}">
+                <img src={{product.imageTmb}} width="100%" height="auto"
+                    alt={{product.name}}>
+            </a>
+            <mat-grid-tile-footer class="grid-tile-footer">
+                <div class="price">{{product.price | currency}}</div>
+                <div class="action">
+                    <button [disabled]="!product.isAvailable" mat-mini-fab class="example-icon btn"
+                        aria-label="Example icon-button with share icon" color="primary" (click)="onAddToCart(product)">
+                        <mat-icon>add_shopping_cart</mat-icon>
+                    </button>
+                </div>
+            </mat-grid-tile-footer>
+        </mat-grid-tile>
+    </mat-grid-list>
+</ng-container>
+<ng-template #noproducts>
+    <h2>Products list is Empty</h2>
+</ng-template>

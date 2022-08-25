@@ -1,0 +1,83 @@
+<h1>{{isAddNewMode ? 'Add new' : 'Edit'}} product</h1>
+<form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Product name:</mat-label>
+            <input 
+                [(ngModel)]="name"
+                name="name"
+                matInput type="text" 
+                placeholder="Product name" 
+                required autocomplete="off">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Product description:</mat-label>
+            <input 
+                [(ngModel)]="description"
+                name="description"
+                matInput type="text" 
+                placeholder="Product description" 
+                required autocomplete="off">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Price:</mat-label>
+            <input 
+                [(ngModel)]="price"
+                name="price"
+                matInput type="text" 
+                placeholder="Price" 
+                required autocomplete="off">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Category</mat-label>
+            <mat-select [(ngModel)]="category" name="category" required>
+                <mat-option 
+                    *ngFor="let category of categories"
+                    [value]="category.type">
+                    {{category.option}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Image URL:</mat-label>
+            <input 
+                [(ngModel)]="image"
+                name="image"
+                matInput type="text" 
+                placeholder="Image URL" 
+                required autocomplete="off">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Thumbnail URL:</mat-label>
+            <input 
+                [(ngModel)]="imageTmb"
+                name="imageTmb"
+                matInput type="text" 
+                placeholder="Thumbnail URL" 
+                required autocomplete="off">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-checkbox 
+            [(ngModel)]="isAvailable"
+            name="isAvailable"
+            [checked]="product.isAvailable" 
+            #checkbox>
+                {{checkbox.checked ? 'Available' : 'Unavailable' }}
+        </mat-checkbox>
+    </p>
+    <input type="hidden" id="id" name="id" [(ngModel)]="id" value={{product.id}}>
+    <p class="action">
+        <button mat-raised-button type="submit" color="primary">{{isAddNewMode ? 'Add product' : 'Save'}}</button>
+    </p>
+</form>

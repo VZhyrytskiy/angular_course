@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+}
+.navigation {
+    button+button {
+        margin-left: 8px;
+    }
+
+    .active {
+        background-color: #3f51b5;
+        color: #fff;
+    }
+}
