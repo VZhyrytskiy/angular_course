@@ -37,6 +37,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [],
   imports: [
+    // Если в компонентах MaterialModulesModule не используются компоненты импортируемых тут моделей,
+    // то эти модули можно только экспортировать без импорта
     CommonModule,
     MatCheckboxModule,
     MatButtonModule,
