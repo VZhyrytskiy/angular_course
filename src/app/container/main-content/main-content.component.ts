@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { CartService } from 'src/app/cart/services/cart.service';
-import { UserRole } from 'src/app/core/models/roles';
+import { Component, OnInit } from '@angular/core';
+import { CartObservableService } from 'src/app/cart/services/cart-observable.service';
+import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -8,15 +8,17 @@ import { AuthService } from 'src/app/core/services/auth.service';
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.scss']
 })
-export class MainContentComponent {
+export class MainContentComponent implements OnInit {
+
+  public quantity!: Observable<number>;
 
   constructor(
-    private cartService: CartService,
+    private cartObservableService: CartObservableService,
     private readonly authService: AuthService
   ) { }
 
-  getQuantity() {
-    return this.cartService.totalQuantity;
+  ngOnInit(): void {
+    this.quantity = this.cartObservableService.productQuantity$;
   }
 
   get isAdmin(): boolean {

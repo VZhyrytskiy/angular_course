@@ -1,28 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { CartService } from 'src/app/cart/services/cart.service';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Subscription, first } from 'rxjs';
+import { CartObservableService } from 'src/app/cart/services/cart-observable.service';
+import { AutoUnsubscribe } from 'src/app/core/decorators/auto-unsubscribe.decorator';
 import { Product } from '../../models/product';
-import { ProductsService } from '../../services/products.service';
+import { ProductsPromiseService } from '../../services/products-promise.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss']
 })
+@AutoUnsubscribe()
 export class ProductListComponent implements OnInit {
-  products!: Observable<Product[]>;
+  private sub!: Subscription;
+  products!: Promise<Product[]>;
 
   constructor(
-    private readonly productsService: ProductsService,
-    private readonly cartService: CartService
+    private readonly productsPromiseService: ProductsPromiseService,
+    private readonly cartObservableService: CartObservableService,
+    private readonly cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
-    this.products = this.productsService.getProducts();
+    this.products = this.productsPromiseService.getProducts();
+    this.sub = this.cartObservableService.getProducts().subscribe();
   }
 
   onAddToCart(product: Product) {
-    this.cartService.addProduct(product);
+    this.sub = this.cartObservableService.addProduct(product)
+      .pipe(
+        first()
+      ).subscribe();
   }
 
   getProductId(index: number, item: Product): string {

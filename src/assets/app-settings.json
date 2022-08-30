@@ -1,0 +1,7 @@
+{
+    "appName": "Test App Name",
+    "sortOptions": {
+        "field": "qty",
+        "direction": "true"
+    }
+}

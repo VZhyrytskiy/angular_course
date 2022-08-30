@@ -1,52 +1,53 @@
 <h2>Cart</h2>
 <div class="container">
-    <!-- <ng-container *ngIf="allProducts.length else no_products"> -->
-    <!-- Для проверки работы guard -->
-    <ng-container>
-        <div class="sort">
-            <select name="sortField" (change)="onSortFieldChange($event)">
-                <option disabled selected value> - select a field - </option>
-                <option *ngFor="let item of sortSelectOptions" [value]="item.type">
-                    {{item.option}}
-                </option>
-            </select>
-            <input type="radio" name="sortDirection" id="sortDirectionAsc" value="true"
-                (change)="onSortDirectionChange($event)">
-            <label for="sortDirectionAsc">Asc.</label>
-            <input type="radio" name="sortDirection" id="sortDirectionDesc" value="false" checked
-                (change)="onSortDirectionChange($event)">
-            <label for="sortDirectionDesc">Desc.</label>
-        </div>
-        <hr>
-        <div class="header">
-            <div class="name">Name</div>
-            <div class="price">Price</div>
-            <div class="quantity">Quantity</div>
-        </div>
-        <div 
-            id={{product.id}} class="row" 
-            *ngFor="let product of allProducts | orderBy : sortOptions.field : sortOptions.direction; let i = index; trackBy: getProductId">
-            
-            <app-cart-item appHighlight
-                [product]="product"
-                [number]="i+1"
-                (increase)="onIncrease($event)"
-                (decrease)="onDecrease($event)"
-                (delete)="onDelete($event)"
-                class="cart-item"
-            ></app-cart-item>
-        </div>
-        <div *ngIf="getSum()" class="footer">
-            <p>Total: {{getQuantity() ? getQuantity() + ' item(s), ': ''}} {{getSum() | currency}}</p>
-        </div>
-        <div class="action">
-            <button mat-flat-button color="primary" class="checkout" aria-label="checkout" routerLink="/order">
-                Checkout
-            </button>
-        </div>
+    <ng-container *ngIf="(products | async) as allProducts">
+        <ng-container *ngIf="allProducts?.length; else no_products">
+            <div class="sort">
+                <select name="sortField" [(ngModel)]="sortOptions.field" (change)="onSortFieldChange($event)">
+                    <option disabled selected value> - select a field - </option>
+                    <option *ngFor="let item of sortSelectOptions" [value]="item.type">
+                        {{item.option}}
+                    </option>
+                </select>
+                <input type="radio" name="sortDirection" id="sortDirectionAsc" value="true" 
+                    [(ngModel)]="sortOptions.direction"
+                    (change)="onSortDirectionChange($event)">
+                <label for="sortDirectionAsc">Asc.</label>
+                <input type="radio" name="sortDirection" id="sortDirectionDesc" value="false" checked
+                    [(ngModel)]="sortOptions.direction"
+                    (change)="onSortDirectionChange($event)">
+                <label for="sortDirectionDesc">Desc.</label>
+            </div>
+            <hr>
+            <div class="header">
+                <div class="name">Name</div>
+                <div class="price">Price</div>
+                <div class="quantity">Quantity</div>
+            </div>
+            <div 
+                id={{product.id}} class="row" 
+                *ngFor="let product of allProducts | orderBy : sortOptions.field : sortOptions.direction; let i = index; trackBy: getProductId">
+                
+                <app-cart-item appHighlight
+                    [product]="product"
+                    [number]="i+1"
+                    (increase)="onIncrease($event)"
+                    (decrease)="onDecrease($event)"
+                    (delete)="onDelete($event)"
+                    class="cart-item"
+                ></app-cart-item>
+            </div>
+            <div *ngIf="getSum(allProducts)" class="footer">
+                <p>Total: {{getQuantity(allProducts) ? getQuantity(allProducts) + ' item(s), ': ''}} {{getSum(allProducts) | currency}}</p>
+            </div>
+            <div class="action">
+                <button mat-flat-button color="primary" class="checkout" aria-label="checkout" routerLink="/order">
+                    Checkout
+                </button>
+            </div>
+        </ng-container>
+        <ng-template #no_products>
+            <mat-card><h3>Cart is Empty</h3></mat-card>
+        </ng-template>
     </ng-container>
-
-    <ng-template #no_products>
-        <mat-card><h3>Cart is Empty</h3></mat-card>
-    </ng-template>
 </div>

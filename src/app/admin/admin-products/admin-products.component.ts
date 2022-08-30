@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/products/models/product';
-import { ProductsService } from 'src/app/products/services/products.service';
+import { ProductsPromiseService } from 'src/app/products/services/products-promise.service';
 
 @Component({
   selector: 'app-admin-products',
@@ -8,19 +8,24 @@ import { ProductsService } from 'src/app/products/services/products.service';
   styleUrls: ['./admin-products.component.scss']
 })
 export class AdminProductsComponent implements OnInit {
-  products!: Product[];
-  constructor(private readonly productService: ProductsService) { }
+
+  public productList!: Promise<Product[]>;
+
+  constructor(
+    private readonly productsPromiseService: ProductsPromiseService
+  ) { }
 
   ngOnInit(): void {
-    this.getProducts();
-  }
-
-  private getProducts() {
-    this.productService.getProducts().subscribe(products => this.products = products);
+    this.productList = this.productsPromiseService.getProducts();
   }
 
   public getProductId(index: number, item: Product): string {
     return item.id;
+  }
+
+  public onDeleteTask(id: string) {
+    this.productsPromiseService.deleteProductById(id)
+    .then(()=>this.productList = this.productsPromiseService.getProducts());
   }
 
 }

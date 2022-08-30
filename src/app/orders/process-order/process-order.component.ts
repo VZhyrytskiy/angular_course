@@ -1,21 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from 'src/app/cart/services/cart.service';
+import { CartObservableService } from 'src/app/cart/services/cart-observable.service';
 
 @Component({
   selector: 'app-process-order',
   templateUrl: './process-order.component.html',
   styleUrls: ['./process-order.component.scss']
 })
-export class ProcessOrderComponent implements OnInit {
+export class ProcessOrderComponent {
 
-  constructor(private readonly cartService: CartService, private readonly router: Router) { }
-
-  ngOnInit(): void {
-  }
+  constructor(
+    private readonly cartObservableService: CartObservableService, 
+    private readonly router: Router) { }
 
   public onSubmit() {
-    this.cartService.removeAllProducts();
+    this.cartObservableService.clearCart().subscribe();
     this.router.navigate(['/']);
   }
 }

@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContainerComponent } from './container/container.component';
 import { MainContentComponent } from './container/main-content/main-content.component';
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { httpInterceptorProviders } from './core/interceptors';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     SharedModule,
     ProductsModule,
     OrdersModule,
@@ -38,6 +41,7 @@ import { LoginComponent } from './login/login.component';
     MainContentComponent,
   ],
   providers: [
+    httpInterceptorProviders,
     {
       provide: ConstantLiteralToken, useValue: constLit
       // HOW TO USE: @Inject(ConstantLiteralToken) private cl: ConstantLiteral

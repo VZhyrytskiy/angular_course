@@ -16,7 +16,7 @@
                 </button>
             </div>
             <button mat-flat-button color="primary" class="cart" aria-label="Cart" routerLink="cart">
-                <div *ngIf="getQuantity()" class="cart-index"><span>{{ getQuantity() }}</span></div>
+                <div *ngIf="quantity | async" class="cart-index"><span>{{ quantity | async }}</span></div>
                 <mat-icon>shopping_cart</mat-icon>
             </button>
         </div>

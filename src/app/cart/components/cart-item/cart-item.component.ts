@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from 'src/app/products/models/product';
 
 @Component({
@@ -10,7 +10,7 @@ export class CartItemComponent {
   @Input() product!: Product;
   @Input() number!: number;
   @Output() increase = new EventEmitter<Product>();
-  @Output() decrease = new EventEmitter<string>();
+  @Output() decrease = new EventEmitter<Product>();
   @Output() delete = new EventEmitter<string>();
 
   onQuantityIncrease() {
@@ -18,7 +18,7 @@ export class CartItemComponent {
   }
 
   onQuantityDecrease() {
-    this.decrease.emit(this.product.id);
+    this.decrease.emit(this.product);
   }
 
   onDeleteItem() {

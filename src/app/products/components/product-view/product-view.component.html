@@ -1,20 +1,20 @@
-<article>
+<article *ngIf="(product | async) as prod">
     <section>
         <div class="left-side">
             <div class="image">
-                <img src={{product.image}} alt={{product.name}}>
+                <img src={{prod.image}} alt={{prod.name}}>
             </div>
         </div>
         <div class="right-side">
             <div class="hewser-row">
-                <h1>{{product.name}}</h1>
-                <div class="category">Category: {{product.category | uppercase}}</div>
-                <div class="description">Description: {{product.description}}</div>
+                <h1>{{prod.name}}</h1>
+                <div class="category">Category: {{prod.category | uppercase}}</div>
+                <div class="description">Description: {{prod.description}}</div>
             </div>
             <div class="footer-row">
-                <div class="price">{{product.price | currency}}</div>
+                <div class="price">{{prod.price | currency}}</div>
                 <div class="action">
-                    <button mat-flat-button color="accent" class="buy" aria-label="Buy" (click)="onAddToCart(product)">
+                    <button mat-flat-button color="accent" class="buy" aria-label="Buy" (click)="onAddToCart(prod)">
                         Buy
                     </button>
                 </div>

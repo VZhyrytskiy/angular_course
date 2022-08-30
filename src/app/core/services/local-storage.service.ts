@@ -1,10 +1,13 @@
-import { InjectionToken } from '@angular/core';
+import { Injectable, InjectionToken } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class LocalStorageService {
   private STORAGE = 'ang_app_storage';
 
   getData() {
-    return JSON.parse(window.localStorage.getItem(this.STORAGE) || '');
+    return JSON.parse(window.localStorage.getItem(this.STORAGE)  || '{}' );
   }
 
   setData(payload: any) {

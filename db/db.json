@@ -1,0 +1,95 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Item Name A",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!",
+      "price": 23,
+      "category": "Expert",
+      "image": "https://source.unsplash.com/random/800?sig=1",
+      "imageTmb": "https://source.unsplash.com/random/300x400?sig=1",
+      "isAvailable": true
+    },
+    {
+      "id": "2",
+      "name": "Item Name B",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!",
+      "price": 21,
+      "isAvailable": true,
+      "category": "Category.Expert",
+      "image": "https://source.unsplash.com/random/800?sig=2",
+      "imageTmb": "https://source.unsplash.com/random/300x400?sig=2"
+    },
+    {
+      "id": "3",
+      "name": "Item Name C",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!",
+      "price": 19.95,
+      "isAvailable": false,
+      "category": "Category.Intermediate",
+      "image": "https://source.unsplash.com/random/800?sig=3",
+      "imageTmb": "https://source.unsplash.com/random/300x400?sig=3"
+    },
+    {
+      "id": "4",
+      "name": "Item Name D",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!",
+      "price": 499.95,
+      "isAvailable": true,
+      "category": "Category.Beginner",
+      "image": "https://source.unsplash.com/random/800?sig=4",
+      "imageTmb": "https://source.unsplash.com/random/300x400?sig=4"
+    },
+    {
+      "id": "5",
+      "name": "Item Name E",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!",
+      "price": 370.15,
+      "category": "Category.Beginner",
+      "image": "https://source.unsplash.com/random/800?sig=5",
+      "imageTmb": "https://source.unsplash.com/random/300x400?sig=5",
+      "isAvailable": false
+    },
+    {
+      "id": "6",
+      "name": "Item Name AAAC",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!",
+      "price": 19.95,
+      "isAvailable": true,
+      "category": "Category.Intermediate",
+      "image": "https://source.unsplash.com/random/800?sig=6",
+      "imageTmb": "https://source.unsplash.com/random/300x400?sig=6"
+    },
+    {
+      "id": "7",
+      "name": "Item Name AAAD",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!",
+      "price": 499.95,
+      "isAvailable": true,
+      "category": "Category.Intermediate",
+      "image": "https://source.unsplash.com/random/800?sig=7",
+      "imageTmb": "https://source.unsplash.com/random/300x400?sig=7"
+    },
+    {
+      "id": "8",
+      "name": "Item Name AAAE",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum consequatur expedita rerum officia in iste repellendus voluptatum hic eligendi amet, itaque neque, ab ipsum obcaecati enim nam dolorum saepe dolores!",
+      "price": 37.15,
+      "isAvailable": true,
+      "category": "Category.Expert",
+      "image": "https://source.unsplash.com/random/800?sig=8",
+      "imageTmb": "https://source.unsplash.com/random/300x400?sig=8"
+    },
+    {
+      "id": "b2a0ad4e-0c9b-4e1d-b93b-3d0df1a775e8",
+      "name": "asdasdasd",
+      "description": "asdasdasdasdasdadasdasdasdas",
+      "price": 33,
+      "category": "Expert",
+      "image": "https://static.remove.bg/remove-bg-web/3d75df900686714aa0c3f2ac38a019cdc089943e/assets/start_remove-c851bdf8d3127a24e2d137a55b1b427378cd17385b01aec6e59d5d4b5f39d2ec.png",
+      "imageTmb": "https://static.remove.bg/remove-bg-web/3d75df900686714aa0c3f2ac38a019cdc089943e/assets/start_remove-c851bdf8d3127a24e2d137a55b1b427378cd17385b01aec6e59d5d4b5f39d2ec.png",
+      "isAvailable": true
+    }
+  ],
+  "cart": []
+}

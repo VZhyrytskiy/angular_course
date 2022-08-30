@@ -1,9 +1,15 @@
-import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppSettingsService } from './core/services/app-settings.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private readonly appSettingsService: AppSettingsService) { }
+
+  ngOnInit(): void {
+    this.appSettingsService.getSettings();
+  }
 }

@@ -4,7 +4,7 @@ import { ActivatedRoute, Data, Router } from '@angular/router';
 import { map, take } from 'rxjs';
 import { categoriesOptions } from 'src/app/first/first.component';
 import { Category, Product } from '../../models/product';
-import { ProductsService } from '../../services/products.service';
+import { ProductsPromiseService } from '../../services/products-promise.service';
 
 @Component({
   selector: 'app-product-form',
@@ -31,7 +31,7 @@ export class ProductFormComponent implements OnInit {
   constructor(
     private readonly route: ActivatedRoute,
     private readonly router: Router,
-    private readonly productsService: ProductsService
+    private readonly productsPromiseService: ProductsPromiseService
   ) { }
 
   ngOnInit(): void {
@@ -70,8 +70,8 @@ export class ProductFormComponent implements OnInit {
     }
 
     if (this.isAddNewMode) {
-      this.productsService.addProduct({
-        id: this.productsService.getNewID() + '',
+      this.productsPromiseService.addProduct({
+        id: this.productsPromiseService.getNewID() + '',
         name: form.value.name,
         description: form.value.description,
         price: +form.value.price,
@@ -79,9 +79,13 @@ export class ProductFormComponent implements OnInit {
         image: form.value.image,
         imageTmb: form.value.imageTmb,
         isAvailable: form.value.isAvailable
+      })
+      .finally(()=>{
+        this.form.resetForm();
+        this.router.navigate(['/admin/products']);
       });
     } else {
-      this.productsService.updateProduct({
+      this.productsPromiseService.updateProduct({
         id: form.value.id,
         name: form.value.name,
         description: form.value.description,
@@ -91,10 +95,11 @@ export class ProductFormComponent implements OnInit {
         imageTmb: form.value.imageTmb,
         isAvailable: form.value.isAvailable
       })
+      .finally(()=>{
+        this.form.resetForm();
+        this.router.navigate(['/admin/products']);
+      });
     }
-
-    this.form.resetForm();
-    this.router.navigate(['/admin/products']);
   }
 
   private fillForm() {
